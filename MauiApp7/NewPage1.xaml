@@ -1,0 +1,29 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiApp7"
+             x:Class="MauiApp7.NewPage1"
+             Title="NewPage1">
+    <VerticalStackLayout>
+        <Label Text="Wpisz Hasło" 
+            FontSize="18" FontAttributes="Bold" />
+
+        <Label x:Name="StrengthLabel" 
+            Text="" 
+            FontSize="14"
+            FontAttributes="Bold" 
+            Margin="0,10,0,0" />
+
+        <Entry x:Name="PasswordEntry" 
+            Placeholder="Min. 8 znaków" 
+            IsPassword="True">
+            <Entry.Behaviors>
+                <local:PasswordStrengthBehavior 
+                    StrengthLabel="{x:Reference StrengthLabel}" />
+            </Entry.Behaviors>
+        </Entry>
+
+        <Label Text="Wymogi: Min. 8 znaków, cyfra, wielka litera" 
+            FontSize="11" 
+            TextColor="Gray" />
+    </VerticalStackLayout>
+</ContentPage>
